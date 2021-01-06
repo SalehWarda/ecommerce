@@ -50,23 +50,23 @@
 
 
 
-<div class="page-inner">
+<div class="page-inner" >
 
     <!-- .page-section -->
-    <div class="page-section">
+    <div class="page-section" >
       <!-- grid row -->
-      <div class="row">
+      <div class="row" >
         <!-- grid column -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" >
           <!-- .card -->
-          <div class="card-header card-fluid ml-5 p-0 card-secondary">
+          <div class="card-header card-fluid ml-5 p-0 card-secondary" >
 
             <h6 class="card-header" style="font-size: 20px;"> General Settings </h6>
 
 
-            <div class="list-group">
+            <div class="list-group" >
 
-                <a href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action "> Shipping Methods<i class="fas fa-angle-right right ml-5"></i></a>
+                <a  href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods*')) active @endif"> Shipping Methods<i class="fas fa-angle-right right ml-5"></i></a>
                 <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                 <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
                 <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</i></a>

@@ -14,7 +14,7 @@
           <img src="{{ asset('assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+          <a href="#" class="d-block">{{ auth('admin')->user()->name }}</a>
         </div>
       </div>
 
@@ -399,7 +399,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.settings') }}" class="nav-link @if(Route::current()->getName()=='admin.settings') active @endif">
+            <a href="{{ route('admin.settings') }}" class="nav-link @if(Request::is( app()->getLocale().'/admin/settings*')) active @endif">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Settings
