@@ -42,7 +42,7 @@ class LoginController extends Controller
     {
         //
         Auth::logout();
-        return view('dashboard.auth.login');
+        return redirect()->route('admin.getLogin');
     }
 
 
