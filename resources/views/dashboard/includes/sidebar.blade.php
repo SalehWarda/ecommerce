@@ -35,34 +35,15 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item ">
+            <a href="{{ route('admin.dashboard') }}" class="nav-link @if(Route::current()->getName() == 'admin.dashboard') active @endif ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
+
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
@@ -418,79 +399,14 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('admin.settings') }}" class="nav-link @if(Route::current()->getName()=='admin.settings') active @endif">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Settings
-                <i class="fas fa-angle-left right"></i>
+
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-truck ml-2"></i>
-                  <p>
-                    Shipping Methods
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{ route('edit.shippings.methods','free') }}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Free Shipping</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('edit.shippings.methods','inner') }}" class="nav-link">
-                           <i class="far fa-circle nav-icon"></i>
-                       <p>Local Pickup</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('edit.shippings.methods','outer') }}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Flat Rate</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Login & Register v2
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/examples/login-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Login v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/register-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Register v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/forgot-password-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Forgot Password v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/recover-password-v2.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Recover Password v2</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+
           </li>
 
           <li class="nav-header">MISCELLANEOUS</li>
@@ -509,16 +425,9 @@
           <li class="nav-header">MULTI LEVEL EXAMPLE</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>Level 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
               <p>
-                Level 1
-                <i class="right fas fa-angle-left"></i>
+                Settings
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -566,7 +475,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="" class="nav-link">
               <i class="fas fa-circle nav-icon"></i>
               <p>Level 1</p>
             </a>
