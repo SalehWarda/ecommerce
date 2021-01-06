@@ -7,6 +7,7 @@ use App\Http\Requests\ShippingsRequest;
 use App\Models\Setting;
 use App\Models\SettingTranslation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SettingsController extends Controller
 {
@@ -61,6 +62,8 @@ class SettingsController extends Controller
 
             $shippingMethod =  Setting::find($id);
 
+            DB::beginTransaction();
+
             $shippingMethod ->update([
 
                 'plain_value' => $request->plain_value
@@ -68,6 +71,8 @@ class SettingsController extends Controller
 
             $shippingMethod ->value = $request->value ;
             $shippingMethod->save();
+
+            DB::commit();
 
             return redirect()->back()->with([
                 'message' => 'Updated Successfuly.',
@@ -81,6 +86,8 @@ class SettingsController extends Controller
                 'message' => 'Something is rong, Try again.',
                 'alert-type' => 'danger',
             ]);
+            
+            DB::rollBack();
           }
 
     }
