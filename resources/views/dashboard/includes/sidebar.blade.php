@@ -402,7 +402,7 @@
             <a href="{{ route('admin.settings') }}" class="nav-link @if(Request::is( app()->getLocale().'/admin/settings*')) active @endif">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
-                Settings
+               Store Settings
 
               </p>
             </a>

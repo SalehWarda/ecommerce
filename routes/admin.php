@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\LoginController;
+use App\Http\Controllers\Dashboard\ProfileSettingsController;
 use App\Http\Controllers\Dashboard\SettingsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -34,8 +35,18 @@ Route::group([
                                     Route::put('/shipping-methods/{id}',[SettingsController::class, 'updateShippingMethods'])->name('update.shippings.methods');
 
                                        });
+                            Route::group(['prefix' => 'profileSettings'], function () {
+
+                                    Route::get('/',[ProfileSettingsController::class, 'profileSettings'])->name('admin.profileSettings');
+                                    Route::get('/account',[ProfileSettingsController::class, 'editAccount'])->name('edit.account');
+                                    Route::put('/account/{id}',[ProfileSettingsController::class, 'updateAccount'])->name('update.account');
+                                    Route::get('/password',[ProfileSettingsController::class, 'changePassword'])->name('change.password');
+                                    Route::put('/password/{id}',[ProfileSettingsController::class, 'updatePassword'])->name('update.password');
+
+                                       });
 
                                });
+
 
 
                            Route::group(['prefix' => 'admin','middleware' => 'guest:admin'], function () {

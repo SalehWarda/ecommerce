@@ -10,6 +10,8 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- overlayScrollbars -->
+   <!-- flag-icon-css -->
+   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/flag-icon-css/css/flag-icon.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/adminlte.min.css') }}">

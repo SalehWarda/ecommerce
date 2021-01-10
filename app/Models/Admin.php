@@ -13,7 +13,13 @@ class Admin extends Authenticatable
     protected $table = 'admins';
     protected $fillable = [
 
-        'name','email','password'
+        'name','email','password','photo',
     ];
     public $timestamps = true ;
+
+
+    public function scopeSelection($query){
+
+        return $query->select('name','email','photo');
+    }
 }

@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+@section('title','eCommerce | Store Settings')
+
 
 @section('content')
 
@@ -13,13 +15,13 @@
            <div class="container-fluid">
              <div class="row mb-2">
                <div class="col-sm-6">
-                 <h1>Settings</h1>
+                 <h1>Store Settings</h1>
                </div>
                  <div class="col-sm-6">
                       <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.settings') }}">Settings</a></li>
-                        <li class="breadcrumb-item  active">General Settings</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.settings') }}">Store Settings</a></li>
+                        <li class="breadcrumb-item  active">General Store Settings</li>
                       </ol>
                  </div>
              </div>
@@ -35,7 +37,7 @@
             <!-- Default box -->
             <div class="card  card-secondary">
               <div class="card-header ">
-                <h3 class="card-title">Settings</h3>
+                <h3 class="card-title">Store Settings</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -61,12 +63,12 @@
           <!-- .card -->
           <div class="card-header card-fluid ml-5 p-0 card-secondary" >
 
-            <h6 class="card-header" style="font-size: 20px;"> General Settings </h6>
+            <h6 class="card-header" style="font-size: 20px;"> General Store Settings </h6>
 
 
             <div class="list-group" >
 
-                <a  href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods*')) active @endif"> Shipping Methods<i class="fas fa-angle-right right ml-5"></i></a>
+                <a  href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods*')) active @endif"> Shipping Methods</a>
                 <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                 <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
                 <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</i></a>
