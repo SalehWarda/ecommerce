@@ -113,15 +113,51 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-user"></i>
+       <!-- Language Dropdown Menu -->
+       <li class="nav-item dropdown">
+        <a href="#" class="dropdown-item " data-toggle="dropdown">
+            <i class="fas fa-language mr-2" ></i>
+            <span class="float-right text-muted text-sm">{{ App::getLocale() }}</span>
+          </a>
+        <div class="dropdown-menu dropdown-menu-right p-0">
+
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+
+            <a class="dropdown-item " rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                {{ $properties['native'] }}
+            </a>
+
+
+            @endforeach
+
+        </div>
+      </li>
+
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="{{ url('assets/admin/dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">{{ auth('admin')->user()->name }}</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" >
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+             <!-- User image -->
+          <li class="user-header bg-secondary">
+            <img src="{{asset('assets/admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+
+            <p>
+              {{ auth('admin')->user()->name }} - Web Developer
+              <small>Member since Nov. 2012</small>
+            </p>
+          </li>
+
+          <!-- Menu Body -->
+
+
+
           <span class="dropdown-item dropdown-header"><i class="fas fa-cog mr-2"></i>Settings</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users-cog mr-2"></i>Edit Profile
+          <a href="{{ route('admin.profileSettings') }}" class="dropdown-item">
+            <i class="fas fa-users-cog mr-2"></i>Settings
           </a>
           <div class="dropdown-divider"></div>
           <a href="{{ route('admin.logout') }}" class="dropdown-item">
@@ -130,7 +166,13 @@
 
 
 
-        </div>
+
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="#" class="btn btn-default btn-flat">Profile</a>
+            <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -142,7 +184,7 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-      
+
     </ul>
   </nav>
   <!-- /.navbar -->
