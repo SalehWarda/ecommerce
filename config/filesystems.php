@@ -47,6 +47,12 @@ return [
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
+        'categories' => [
+            'driver' => 'local',
+            'root' => public_path() . '/assets/admin/images/categories/',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

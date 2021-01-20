@@ -97,7 +97,10 @@ class ProfileSettingsController extends Controller
                     }
 
 
-                $password->update($request->only('password') );
+                $password->update([
+
+                    'password' => $request->new_password,
+                ]);
 
 
 

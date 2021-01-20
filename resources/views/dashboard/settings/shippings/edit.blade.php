@@ -13,13 +13,13 @@
       <div class="card-header p-0 border-bottom-0" >
         <ul class="nav nav-tabs "  id="custom-tabs-four-tab" role="tablist">
           <li class="nav-item" >
-            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods/free')) active @endif" id="custom-tabs-four-home-tab"  href="{{ route('edit.shippings.methods',['type'=>'free']) }}" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Free Shipping</a>
+            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/storeSettings/shipping-methods/free')) active @endif" id="custom-tabs-four-home-tab"  href="{{ route('edit.shippings.methods',['type'=>'free']) }}" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Free Shipping</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods/inner')) active @endif" id="custom-tabs-four-profile-tab"  href="{{ route('edit.shippings.methods',['type'=>'inner']) }}" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Local Shipping</a>
+            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/storeSettings/shipping-methods/inner')) active @endif" id="custom-tabs-four-profile-tab"  href="{{ route('edit.shippings.methods',['type'=>'inner']) }}" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Local Shipping</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods/outer')) active @endif" id="custom-tabs-four-messages-tab" href="{{ route('edit.shippings.methods',['type'=>'outer']) }}" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">outer Shipping</a>
+            <a class="nav-link  @if(Request::is( app()->getLocale().'/admin/storeSettings/shipping-methods/outer')) active @endif" id="custom-tabs-four-messages-tab" href="{{ route('edit.shippings.methods',['type'=>'outer']) }}" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">outer Shipping</a>
           </li>
 
         </ul>

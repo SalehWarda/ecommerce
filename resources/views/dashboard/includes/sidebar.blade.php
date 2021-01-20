@@ -398,45 +398,35 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.settings') }}" class="nav-link @if(Request::is( app()->getLocale().'/admin/settings*')) active @endif">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-               Store Settings
 
-              </p>
-            </a>
-
-          </li>
-
-          <li class="nav-header">MISCELLANEOUS</li>
-          <li class="nav-item">
-            <a href="iframe.html" class="nav-link">
-              <i class="nav-icon fas fa-ellipsis-h"></i>
-              <p>Tabbed IFrame Plugin</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
-            </a>
-          </li>
-          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+              <i class="nav-icon fas fa-store-alt-slash"></i>
               <p>
-                Settings
+                Categories
+                <i class="right fas fa-angle-left"></i>
+
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.mainCategories') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
+                  <p>Main Categories</p>
+                  <span class="badge badge-info right">{{ \App\Models\Category::Parent()->count() }}</span>
+
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{ route('admin.subCategories') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sub Categories</p>
+                  <span class="badge badge-info right">{{ \App\Models\Category::Child()->count() }}</span>
+
+                </a>
+              </li>
+
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -466,14 +456,36 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
-                </a>
-              </li>
+
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin.settings') }}" class="nav-link @if(Request::is( app()->getLocale().'/admin/storeSettings*')) active @endif">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+               Store Settings
+
+              </p>
+            </a>
+
+          </li>
+
+          <li class="nav-header">MISCELLANEOUS</li>
+          <li class="nav-item">
+            <a href="iframe.html" class="nav-link">
+              <i class="nav-icon fas fa-ellipsis-h"></i>
+              <p>Tabbed IFrame Plugin</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Documentation</p>
+            </a>
+          </li>
+          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="fas fa-circle nav-icon"></i>

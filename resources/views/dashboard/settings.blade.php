@@ -68,7 +68,7 @@
 
             <div class="list-group" >
 
-                <a  href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action  @if(Request::is( app()->getLocale().'/admin/settings/shipping-methods*')) active @endif"> Shipping Methods</a>
+                <a  href="{{ route('edit.shippings.methods',('free')) }}" class=" list-group-item list-group-item-action  @if(Request::is( app()->getLocale().'/admin/storeSettings/shipping-methods*')) active @endif"> Shipping Methods</a>
                 <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                 <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
                 <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</i></a>
