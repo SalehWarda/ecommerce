@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
    <!-- Bootstrap4 Duallistbox -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
@@ -57,6 +60,8 @@
 <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
 <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+ <!-- Select2 -->
+ <script src="{{ asset('assets/admin/plugins/select2/js/select2.full.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
@@ -84,19 +89,24 @@
     $(function () {
 
 
-
-
-
-
-
       $("input[data-bootstrap-switch]").each(function(){
         $(this).bootstrapSwitch('state', $(this).prop('checked'));
       });
 
     })
 
+     //Initialize Select2 Elements
+     $('.select2').select2()
+
+     //Initialize Select2 Elements
+      $('.select2bs4').select2({
+       theme: 'bootstrap4'
+     })
+
 
 
   </script>
+
+
 </body>
 </html>

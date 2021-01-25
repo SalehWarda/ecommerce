@@ -25,8 +25,9 @@ class SubCategoryController extends Controller
 
     public function createSubCategories()
     {
-        //
-        $maincategories =  Category::Parent()->orderBy('id','desc')->get();
+        //        $maincategories =  Category::select('id','parent_id')->get();
+
+        $maincategories =  Category::select('id','parent_id')->orderBy('id','desc')->get();
         return view('dashboard.categories.createSubCategories',compact('maincategories'));
     }
 

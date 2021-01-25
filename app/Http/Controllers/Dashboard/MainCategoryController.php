@@ -16,7 +16,7 @@ class MainCategoryController extends Controller
     public function mainCategories()
     {
         //
-     $maincategories =  Category::Parent()->orderBy('id','desc')->paginate(PAGINATION_COUNT);
+     $maincategories =  Category::with('_parent')->orderBy('id','desc')->paginate(PAGINATION_COUNT);
 
         return view('dashboard.categories.mainCategories',compact('maincategories'));
     }
@@ -29,8 +29,10 @@ class MainCategoryController extends Controller
     public function createMainCategories()
     {
         //
+        $maincategories =  Category::select('id','parent_id')->get();
 
-        return view('dashboard.categories.createCategories');
+
+        return view('dashboard.categories.createCategories',compact('maincategories'));
     }
 
 

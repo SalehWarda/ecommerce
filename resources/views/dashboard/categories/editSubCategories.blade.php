@@ -53,6 +53,8 @@
                 <form class ="form" action="{{ route('admin.subCategories.update',$category->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
+                    <input type="hidden" name="id" value="{{ $category->id }}">
+
 
 
                     <div class="form-group" >

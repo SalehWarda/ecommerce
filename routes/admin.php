@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Dashboard\BrandController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\LoginController;
 use App\Http\Controllers\Dashboard\MainCategoryController;
+use App\Http\Controllers\dashboard\ProductsController;
 use App\Http\Controllers\Dashboard\SubCategoryController;
 use App\Http\Controllers\Dashboard\ProfileSettingsController;
 use App\Http\Controllers\Dashboard\SettingsController;
+use App\Http\Controllers\Dashboard\TagController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -81,7 +84,61 @@ Route::group([
 
                             ################################## End SubCategories Route ####################################
 
+
+                            ################################## Brands Route #######################################
+
+                            Route::group(['prefix' => 'brands'], function () {
+
+                                Route::get('/',[BrandController::class, 'brands'])->name('admin.brands');
+                                Route::get('/create',[BrandController::class, 'createBrands'])->name('admin.brands.create');
+                                Route::post('/store',[BrandController::class, 'storeBrands'])->name('admin.brands.store');
+                                Route::get('/edit/{id}',[BrandController::class, 'editBrands'])->name('admin.brands.edit');
+                                Route::post('/update/{id}',[BrandController::class, 'updateBrands'])->name('admin.brands.update');
+                                Route::get('/delete/{id}',[BrandController::class, 'destroyBrands'])->name('admin.brands.delete');
+
+                                   });
+
+
+                            ################################## End Brands Route ####################################
+
+                             ################################## Tags Route #######################################
+
+                             Route::group(['prefix' => 'Tags'], function () {
+
+                                Route::get('/',[TagController::class, 'tags'])->name('admin.tags');
+                                Route::get('/create',[TagController::class, 'createTags'])->name('admin.tags.create');
+                                Route::post('/store',[TagController::class, 'storeTags'])->name('admin.tags.store');
+                                Route::get('/edit/{id}',[TagController::class, 'editTags'])->name('admin.tags.edit');
+                                Route::post('/update/{id}',[TagController::class, 'updateTags'])->name('admin.tags.update');
+                                Route::get('/delete/{id}',[TagController::class, 'destroyTags'])->name('admin.tags.delete');
+
+                                   });
+
+
+                            ################################## End Tags Route ####################################
+
+                             ################################## Tags Route #######################################
+
+                             Route::group(['prefix' => 'Products'], function () {
+
+                                Route::get('/',[ProductsController::class, 'products'])->name('admin.products');
+                                Route::get('/general-information',[ProductsController::class, 'createProducts'])->name('admin.products.general.create');
+                                Route::post('/store-general-information',[ProductsController::class, 'storeProducts'])->name('admin.products.general.store');
+                                Route::get('/edit/{id}',[ProductsController::class, 'editProducts'])->name('admin.products.edit');
+                                Route::post('/update/{id}',[ProductsController::class, 'updateProducts'])->name('admin.products.update');
+                                Route::get('/delete/{id}',[ProductsController::class, 'destroyProducts'])->name('admin.products.delete');
+
+                                   });
+
+
+                            ################################## End Tags Route ####################################
+
                                });
+
+
+
+
+
 
 
 

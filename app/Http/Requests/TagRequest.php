@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainCategoryRequest extends FormRequest
+class TagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,7 @@ class MainCategoryRequest extends FormRequest
         return [
             //
             'name'  => 'required',
-            
-
-            'photo'  => 'required|mimes:png,jpg,jpeg',
-            'slug'  => 'required|unique:categories,slug,'.$this->id,
+            'slug'  => 'required|unique:tags,slug,'.$this->id,
         ];
     }
 
@@ -37,9 +34,9 @@ class MainCategoryRequest extends FormRequest
     {
         return[
 
-            'required'  => 'this field is required',
-            'unique'    => 'This slug is already used',
 
+            'required'  => 'This field is required',
+            'unique'    => 'This slug is already used',
         ];
     }
 }
